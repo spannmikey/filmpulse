@@ -1,9 +1,11 @@
+import React from "react";
 import "@styles/globals.css";
 import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 
-import { Poppins } from "next/font/google";
+import { Providers } from "./providers";
 
+import { Poppins } from "next/font/google";
 const poppins = Poppins({ weight: ["500", "700"], subsets: ["latin"] });
 
 export const metadata = {
@@ -11,15 +13,17 @@ export const metadata = {
 	description: "Movie viewing web app",
 };
 
-const RootLayout = ({ children }) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html lang="en">
 			<body className={poppins.className}>
-				<main className="app">
-					<Nav />
-					{children}
-					{/* <Footer /> */}
-				</main>
+				<Providers>
+					<main className="app">
+						<Nav />
+						{children}
+						{/* <Footer /> */}
+					</main>
+				</Providers>
 			</body>
 		</html>
 	);
