@@ -4,7 +4,7 @@ import { BsFillPlayFill } from "react-icons/bs";
 
 const TopMovie = () => {
 	return (
-		<article className="flex flex-col gap-y-3 ">
+		<article className="flex flex-col gap-y-3">
 			<Chip className="bg-[#99daee] text-white">Top</Chip>
 			<h1 className="text-6xl">Spider man no way home</h1>
 			<p className="lg:w-1/2">
