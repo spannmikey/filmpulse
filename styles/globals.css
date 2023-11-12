@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .app {
-	@apply bg-[#282A36] text-[#eee];
+	@apply bg-[#282A36] text-[#eee] min-h-screen;
 }
