@@ -26,7 +26,7 @@ const getTopRatedMovies = async () => {
 	}
 };
 
-const AllMovies = async ({ data }) => {
+const AllMovies = async () => {
 	const topRatedMovies = await getTopRatedMovies();
 	const movies = topRatedMovies.results;
 

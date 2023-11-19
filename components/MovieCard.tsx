@@ -1,8 +1,11 @@
 import { Card, CardFooter, Image, Button } from "@nextui-org/react";
 
-// ... (import statements)
+interface Props {
+	title: string;
+	poster_path: string;
+}
 
-const MovieCard = ({ title, poster_path }) => {
+const MovieCard = ({ title, poster_path }: Props) => {
 	return (
 		<Card
 			isFooterBlurred

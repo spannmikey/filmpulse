@@ -21,9 +21,9 @@ const Home = () => {
 				<div className="w-fit mt-6">
 					<Cards />
 				</div>
-				<div className="w-fit mt-6">
+				{/* <div className="w-fit mt-6">
 					<AllMovies />
-				</div>
+				</div> */}
 			</section>
 		</div>
 	);

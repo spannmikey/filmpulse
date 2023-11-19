@@ -1,7 +1,9 @@
 import MovieCard from "./MovieCard";
 
-interface Props {
-	data: [];
+interface Movie {
+	id: number;
+	title: string;
+	poster_path: string;
 }
 
 const getTopRatedMovies = async () => {
@@ -29,9 +31,9 @@ const getTopRatedMovies = async () => {
 	}
 };
 
-const Cards = async ({ data }) => {
+const Cards = async () => {
 	const topRatedMovies = await getTopRatedMovies();
-	const movies = topRatedMovies.results;
+	const movies = topRatedMovies.results as Movie[];
 
 	// Get original title and map over all of them
 
