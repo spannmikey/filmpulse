@@ -5,3 +5,16 @@
 .app {
 	@apply bg-[#282A36] text-[#eee] min-h-screen;
 }
+
+/* Add the following styles to control the width of MovieCard components */
+.MovieCard {
+	flex-shrink: 0; /* Prevent cards from shrinking */
+	width: 200px; /* Set a fixed width for each card */
+}
+
+/* Add media queries if you want to make it responsive */
+@media screen and (max-width: 600px) {
+	.MovieCard {
+		width: 100%; /* Set full width on smaller screens */
+	}
+}

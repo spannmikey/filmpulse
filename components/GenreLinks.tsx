@@ -6,26 +6,40 @@ const GenreLinks = () => {
 		<article>
 			<div className="flex flex-1 flex-wrap gap-4 border-b-2 pb-6 w-full">
 				<Link href="/action">
-					<Chip className="bg-[#99daee] text-white">Action</Chip>
+					<Chip className="text-white bg-[#99daee] py-[0.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+						Action
+					</Chip>
 				</Link>
 				<Link href="/comedy">
-					<Chip className="bg-[#99daee] text-white">Comedy</Chip>
+					<Chip className="text-white bg-[#99daee] py-[0.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+						Comedy
+					</Chip>
 				</Link>
 				<Link href="/adventure">
-					<Chip className="bg-[#99daee] text-white">Adventure</Chip>
+					<Chip className="text-white bg-[#99daee] py-[0.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+						Adventure
+					</Chip>
 				</Link>
 				<Link href="/drama">
-					<Chip className="bg-[#99daee] text-white">Drama</Chip>
+					<Chip className="text-white bg-[#99daee] py-[0.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+						Drama
+					</Chip>
 				</Link>
 				<Link href="/animation">
-					<Chip className="bg-[#99daee] text-white">Animation</Chip>
+					<Chip className="text-white bg-[#99daee] py-[0.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+						Animation
+					</Chip>
 				</Link>
 				<Link href="/fantasy">
-					<Chip className="bg-[#99daee] text-white">Fantasy</Chip>
+					<Chip className="text-white bg-[#99daee] py-[0.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+						Fantasy
+					</Chip>
 				</Link>
 				<Link href="/horror">
-					<Chip className="bg-[#99daee] text-white">Horror</Chip>
-				</Link>
+					<Chip className="text-white bg-[#99daee] py-[0.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+						Horror
+					</Chip>
+				</Link>	
 			</div>
 		</article>
 	);

@@ -2,6 +2,7 @@ import GenreLinks from "@components/GenreLinks";
 import Recommended from "@components/Recommended";
 import TopMovie from "@components/TopMovie";
 import Cards from "@components/Cards";
+import AllMovies from "@components/AllMovies";
 
 const Home = () => {
 	return (
@@ -19,6 +20,9 @@ const Home = () => {
 				<Recommended />
 				<div className="w-fit mt-6">
 					<Cards />
+				</div>
+				<div className="w-fit mt-6">
+					<AllMovies />
 				</div>
 			</section>
 		</div>

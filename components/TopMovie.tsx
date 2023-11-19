@@ -2,44 +2,49 @@ import Link from "next/link";
 import { Chip } from "@nextui-org/react";
 import { BsFillPlayFill } from "react-icons/bs";
 
-const TopMovie = () => {
+const getTopRatedMovies = async () => {
+	const options = {
+		method: "GET",
+		headers: {
+			accept: "application/json",
+			Authorization: `Bearer ${process.env.API_KEY}`,
+		},
+	};
+
+	try {
+		const res = await fetch(
+			"https://api.themoviedb.org/3/movie/popular",
+			options
+		);
+		if (res.ok) {
+			const data = await res.json();
+			return data;
+		} else {
+			console.error(`Error: ${res.status} - ${res.statusText}`);
+		}
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+const TopMovie = async () => {
+	const topRatedMovies = await getTopRatedMovies();
+	const movie = topRatedMovies.results[0];
+
 	return (
 		<article className="flex flex-col gap-y-3">
 			<Chip className="bg-[#99daee] text-white">Top</Chip>
-			<h1 className="text-6xl">Spider man no way home</h1>
-			<p className="lg:w-1/2">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-				mollitia at debitis iste, officia dolore reiciendis numquam molestiae,
-				excepturi soluta minima ad voluptatibus dolorum sequi! Autem voluptates
-				est ipsum corporis?
-			</p>
-			<div className="flex gap-x-2">
-				<span>2022 |</span>
-				<span className="text-[#99daee]">16+</span>
-				<span>| 1 Season |</span>
-				<span>TV series for teenagers</span>
-			</div>
-			<div className="flex gap-x-2 items-center">
-				{/* change to star icon */}
-				<span>⭐</span>
-				<span className="font-bold text-lg">5.8</span>
-				<span>
-					Season <span className="text-[#99daee]">1</span>
-				</span>
-				<span>
-					Episode <span className="text-[#99daee]">1</span>
-				</span>
-				<span>
-					Genre : <span>comedy, detective</span>
-				</span>
+			<div>
+				<h1 className="text-6xl mb-6">{movie.title}</h1>
+				<p className="lg:w-1/2">{movie.overview}</p>
 			</div>
 
 			<Link href="/featureNotMadeYet">
 				<Chip
 					startContent={<BsFillPlayFill size={20} />}
 					variant="shadow"
-					className="text-white bg-[#99daee] py-[1.5rem] px-8 mt-6">
-					Chip
+					className="text-white bg-[#99daee] py-[1.5rem] px-8 mt-6 hover:bg-transparent border-2 transition-all ease-in-out delay-150">
+					Watch
 				</Chip>
 			</Link>
 		</article>

@@ -1,5 +1,6 @@
 import { Image } from "@nextui-org/react";
-const Series = () => {
+
+const Custom404 = () => {
 	return (
 		<div className="flex flex-col justify-center items-center min-h-screen ">
 			<Image
@@ -8,8 +9,8 @@ const Series = () => {
 				width={500}
 				height={500}
 			/>
-			<h3>Uh-oh I have not created this page yet.</h3>
+			<h3>Uh-oh something went wrong.</h3>
 		</div>
 	);
 };
-export default Series;
+export default Custom404;

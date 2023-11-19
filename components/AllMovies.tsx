@@ -1,8 +1,5 @@
-import MovieCard from "./MovieCard";
-
-interface Props {
-	data: [];
-}
+import { JSX } from "react";
+import MovieCardAll from "./MovieCardAll";
 
 const getTopRatedMovies = async () => {
 	const options = {
@@ -15,7 +12,7 @@ const getTopRatedMovies = async () => {
 
 	try {
 		const res = await fetch(
-			"https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+			"https://api.themoviedb.org/3/genre/movie/list?language=en",
 			options
 		);
 		if (res.ok) {
@@ -29,22 +26,22 @@ const getTopRatedMovies = async () => {
 	}
 };
 
-const Cards = async ({ data }) => {
+const AllMovies = async ({ data }) => {
 	const topRatedMovies = await getTopRatedMovies();
 	const movies = topRatedMovies.results;
 
 	// Get original title and map over all of them
 
-	return (
-		<div className="flex flex-wrap items-center justify-start gap-4 ">
-			{movies.map(movie => (
-				<MovieCard
-					key={movie.id}
-					{...movie}
-				/>
-			))}
-		</div>
-	);
+	// return (
+	// 	<div className="flex border-2 gap-4 ">
+	// 		{movies.map((movie: JSX.IntrinsicAttributes & { title: any; poster_path: any }) => (
+	// 			<MovieCardAll
+	// 				key={movie.id}
+	// 				{...movie}
+	// 			/>
+	// 		))}
+	// 	</div>
+	// );
 };
 
-export default Cards;
+export default AllMovies;
